@@ -1,0 +1,19 @@
+{{!-- Please validate any customizations with Schema validator! (https://validator.schema.org/) --}}
+<script type="application/ld+json" class="yext-schema-json" data-yext-id="{{id}}">
+{
+  "@context": "https://schema.org",
+  "@id": "{{id}}",
+  "@type": "MedicalOrganization",
+  "name": "Ospedali GVM in {{name}}",
+  "telephone": "{{mainPhone}}",
+  "address":{
+    "@type": "PostalAddress",
+    "addressLocality": "Lugo (RA)",
+    "addressRegion": "Emilia Romagna",
+    "postalCode": "48022",
+    "streetAddress": "c.so Garibaldi, 11"
+  },
+  "logo":"https://www.gvmnet.it/App_Themes/GVMNet/images/gruppovillamaria_logo.png",
+   "url":"https://ospedali.gvmnet.it/{{slug}}"
+}
+</script>

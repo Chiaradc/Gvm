@@ -1,0 +1,15 @@
+/.artifact-output
+/localData
+/node_modules
+/sites-rendered-output
+cli
+cli.exe
+/.idea
+.DS_Store
+src/.DS_Store
+src/js/.DS_Store
+/assets/locator.js
+/assets/main.js
+/assets/util.js
+/assets/analytics.js
+/.vs/VSWorkspaceState.json

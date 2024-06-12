@@ -1,0 +1,66 @@
+<div id="openorclosed"></div>
+
+<script> 
+    Handlebars.compile("{{#with (formatHours this 'Monday' 'TimeFormatShort' 'DateFormatShort')}}");
+    var giorno = 1; //imposto lunedì
+    var d = new Date(); //vedo che giorno è
+    var dy = d.getDay(); // 0 = domenica, 1 = lunedì etc..
+    var moment = String(Date()).slice(16, 21); // orario
+    var moment = moment.replace(":", ""); //tolgo : e unisco i numeri
+    var openorclosed = document.getElementById("openorclosed");
+
+    "{{#each this.regularHours}}"      
+        
+        var today = "{{this.displayDay}}"; // Inutilizzato. Stampa il giorno della settimana
+        var closed = "{{this.Closed}}";
+        var open247 = "{{this.is247}}";
+
+        //controllo se l'each è arrivato allo stesso numero di dy (giorno attuale)
+        if (giorno == dy) {     
+
+            "{{#if this.isClosed}}"
+            addClassClosed();
+            document.getElementById("openorclosed").innerHTML = "Chiuso";
+            "{{/if}}"
+
+            "{{#if this.is247}}"     
+            addClassOpen()
+            document.getElementById("openorclosed").innerHTML = "Aperto 24 ore";
+            "{{/if}}"
+
+            //imposto counter per l'orario spezzato
+            var count = 0;
+            //itero tra gli intervalli di tempo in cui è aperto
+            "{{#each this.openIntervals}}"
+            var start = "{{this.start}}" //apertura
+            var end = "{{this.end}}"     //chiusura
+            var inizio = start.replace(":", "");
+            var fine = end.replace(":", "");                     
+            //controllo se l'orario attuale rientra negli orari di apertura
+            if (moment > inizio && moment < fine) {     
+                addClassOpen()
+                document.getElementById("openorclosed").innerHTML = "Aperto";
+                count++;
+            } else {
+                if (count != 1) {
+                    addClassClosed();
+                    document.getElementById("openorclosed").innerHTML = "Chiuso";
+                }
+               
+            }
+            "{{/each}}"
+    }
+
+    function addClassOpen() {
+        openorclosed.classList.add("open");
+    }
+
+    function addClassClosed() {
+        openorclosed.classList.add("closed");
+    }
+
+    giorno++;
+       
+   "{{/each}}"
+    Handlebars.compile("{{/with}}");
+</script>

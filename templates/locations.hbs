@@ -1,0 +1,280 @@
+---
+{
+    "stream": {
+        "$id": "locations",
+        "source": "knowledgeGraph",
+        "destination": "pages",
+        "filter" : {
+            "entityTypes": [
+                "healthcareFacility"
+            ],
+            "savedFilterIds": ["1234994255"]
+        },
+        "fields": [
+            "id",
+            "uid",
+            "meta",
+            "name",
+            "c_nomeStruttura",
+            "address",
+            "mainPhone",
+            "description",
+            "c_descrizioneLunga",
+            "hours",
+            "photoGallery",
+            "slug",
+            "c_immagineStruttura",
+            "c_immagineSpecialita",
+            "c_immagine_cartina",
+            "c_descrizioneBreve",
+            "geocodedCoordinate",
+            "services",
+            "c_baseURL",
+            "c_urlPrenotazione",
+            "c_urlContatti",
+            "c_urlOrari",
+            "websiteUrl",
+            "neighborhood",
+            "paymentOptions",
+            "primaryPhoto",
+            "c_iniziativeCorrelate.primaryPhoto",
+            "c_iniziativeCorrelate.c_descrizioneBreve",
+            "c_iniziativeCorrelate.c_baseURL",
+            "c_iniziativeCorrelate.slug",
+            "c_iniziativeCorrelate.name",
+            "c_listaSpecialità",
+            "c_contenutiInEvidenza",
+            "c_direttoreSanitario",
+            "c_amministratoreDelegato",
+            "c_postiLetto",
+            "c_datiAmministrazione_1",
+            "c_datiAmministrazione_2",
+            "c_elencoSpecialitaStrutturaGVM",
+            "c_elencoServiziStrutturaGVM",
+            "c_urlTutteLeSpecialita",
+            "c_uRLStrutturaSitoGVM",
+            "c_bannerTop",
+            "dm_directoryParents.name",
+            "dm_directoryParents.id",
+            "dm_directoryParents.slug",
+            "dm_directoryParents.address",
+            "r_regione",
+            "c_banner"
+        ],
+        "localization": {
+            "locales": ["it"]
+        }
+    },
+    "urlFormat": "{{slug}}"
+}
+---
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    {{>head}}
+    
+</head>
+<body class="relative">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WVQ4R5G"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    {{>schema}}
+    <!-- End Google Tag Manager (noscript) -->
+    {{>header_elogic}}
+
+    {{#if c_bannerTop}}
+    <div class="bannerTop"><p>{{c_bannerTop}}</p></div>
+    {{/if}}
+
+
+    <div class="section section_breadcrumbs" data-ya-scope="SectionBreadcrumbs">
+        <div class="container">
+            <a class="br_home" data-ya-track="LinkHome" href="/">Home</a> > <a class="br_regione" data-ya-track="LinkRegione" href="/{{dm_directoryParents.[1].slug}}">{{dm_directoryParents.[1].name}}</a> > <span class="active_page br_ospedale">
+                {{#if c_nomeStruttura}}{{c_nomeStruttura}}{{else}}{{name}}{{/if}}
+            </span>
+        </div>
+    </div>
+
+    <div class="section section_main_banner" data-ya-scope="SectionBanner">
+        {{>main_banner}}
+    </div>
+    <div class="section section_location_details" data-ya-scope="SectionMappa">
+        {{>locationdetails}}
+    </div>
+    {{#if c_descrizioneLunga}}
+    <div class="section">
+        <div class="container">
+            <div class="">{{>aboutmap}} </div>
+        </div>
+    </div>
+    {{/if}}
+    {{#if c_banner}}
+<div class="container mt-4">
+    <div class="mygvmbox2">
+        <div class="flexer">
+            <div class="image">
+                <img id="p_lt_ctl06_pageplaceholder_p_lt_ctl09_Immagine_ucEditableImage_imgImage" class="img-cover" src="https://www.gvmnet.it/admingvm/media/GVM_NET_Immagini/Telemedicina/MyGvm/DOTTORE-IPHONE.png" alt="" style="object-position: right;">
+
+            </div> <!-- .image -->
+            <div class="text">
+                <img id="p_lt_ctl06_pageplaceholder_p_lt_ctl09_Immagine1_ucEditableImage_imgImage" src="https://www.gvmnet.it/admingvm/media/GVM_NET_Immagini/Telemedicina/MyGvm/Oggetto-vettoriale-avanzato.png?width=145" alt="" style="width:145px;">
+
+                <div class="text_content">
+                    <h3>
+                        Prenotazioni e appuntamenti nel palmo della tua mano
+
+
+
+                    </h3>La nuova app&nbsp;<em><strong>MyGVM</strong></em>&nbsp;ti permette di trovare il tuo medico preferito,&nbsp;prenotare visite, controllare l’esito degli esami direttamente dal tuo&nbsp;telefonino!&nbsp;<strong>Scaricala ora!</strong>
+
+                    <div>
+                        <a class="button-blue" href="https://www.gvmnet.it/telemedicina/my-gvm-app" target="_blank">
+                            Scopri di più
+                        </a>
+                    </div>
+
+                </div><!-- .text_content -->
+
+                <div class="links" style="display:flex;gap:10px">
+                    <a target="_blank" href="https://apps.apple.com/it/app/my-gvm/id1620552165">
+                        <img id="p_lt_ctl06_pageplaceholder_p_lt_ctl09_Cta_AS_ucEditableImage_imgImage" src="https://www.gvmnet.it/admingvm/media/GVM_NET_Immagini/Telemedicina/MyGvm/cta_appstore.png?width=170" alt="" style="width:170px;">
+
+                    </a><a target="_blank" href="https://play.google.com/store/apps/details?id=com.gvmportal.app&amp;hl=en_US&amp;gl=US">
+                        <img id="p_lt_ctl06_pageplaceholder_p_lt_ctl09_Cta_GP_ucEditableImage_imgImage" src="https://www.gvmnet.it/admingvm/media/GVM_NET_Immagini/Telemedicina/MyGvm/cta_playstore.png?width=170" alt="" style="width:170px;">
+
+                    </a>
+                </div><!-- .links -->
+            </div>
+        </div>
+    </div>
+</div>
+    <style>
+        .mygvmbox2 {
+            background: #fff
+        }
+
+            .mygvmbox2 .spacer {
+                width: calc(100% - 30px);
+                margin: 0 auto;
+                max-width: 1000px;
+                padding: 30px 0
+            }
+
+            .mygvmbox2 .flexer {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap
+            }
+
+            .mygvmbox2 .image {
+                width: 100%;
+                text-align: center
+            }
+
+                .mygvmbox2 .image img {
+                    width: 100%;
+                    height: auto;
+                    max-width: 480px;
+                    padding: 20px;
+                }
+
+            .mygvmbox2 .text {
+                width: 100%;
+                padding: 20px 0;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                padding: 40px 20px 20px;
+                align-items: center;
+                text-align: center
+            }
+
+                .mygvmbox2 .text h1,
+                .mygvmbox2 .text h2,
+                .mygvmbox2 .text h3 {
+                    color: #0080c2;
+                    font-family: proxima-nova,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+                    font-weight: 800;
+                    line-height: 1.2;
+                    letter-spacing: -1px
+                }
+
+            .mygvmbox2 .links a {
+                display: inline-block;
+                transition: .3s;
+                margin-top: 15px
+            }
+
+                .mygvmbox2 .links a:hover {
+                    opacity: .5
+                }
+
+        @media(min-width:768px) {
+            .mygvmbox2 .text {
+                width: calc(50% - 40px);
+                padding: 20px;
+                display: block;
+                text-align: left
+            }
+
+                .mygvmbox2 .text img {
+                    margin-bottom: 15px
+                }
+
+            .mygvmbox2 .image {
+                width: 50%
+            }
+
+            .mygvmbox2 .spacer {
+                padding: 60px 0
+            }
+        }
+
+        @media(min-width:960px) {
+            .mygvmbox2 .text {
+                width: calc(50% - 30px);
+                padding: 30px 0 30px 30px
+            }
+
+            .mygvmbox2 .links a {
+                margin-top: 20px
+            }
+        }
+    </style>
+    {{/if}}
+    {{#if c_contenutiInEvidenza}}
+    <div class="section background_specialita" data-ya-scope="SectionInEvidenza">
+        <div class="container">
+            {{>evidenza}}
+        </div>
+    </div>
+    {{/if}}
+    {{#if c_elencoSpecialitaStrutturaGVM}}
+    <div class="section background_specialita" data-ya-scope="SectionSpecialitaServizi">
+        <div class="container">
+            {{>specialita_servizi}}
+        </div>
+    </div>
+    {{/if}}
+    <div class="section" data-ya-scope="SectionClinicheVicine">
+        <div class="container">
+            <div class="">{{>nearby geocodedCoordinate}}</div>
+        </div>
+    </div>
+    <div class="section" data-ya-scope="SectionDatiLegali">
+        <div class="container">
+            {{>dati_legali}}
+        </div>
+    </div><!-- new data_legal -->
+    <div class="w-full" data-ya-scope="SectionFooter">
+        {{>footer}}
+    </div>
+
+</body>
+
+</html>
+
+

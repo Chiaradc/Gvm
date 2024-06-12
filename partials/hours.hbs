@@ -1,0 +1,23 @@
+{{!-- <summary class="hours-list text-base">   --}}
+
+{{#prettifyDate}}{{timestamp}}{{/prettifyDate}}
+{{#with (formatHours this "Monday" "TimeFormatShort" "DateFormatShort") }}
+
+
+
+{{#each this.regularHours}}
+<div class="grid grid-cols-2 lg:grid-cols-5 day-list-inner">
+    <div class="lg:col-span-2">
+        <strong>{{this.displayDay}}</strong>
+    </div>
+    <div class="lg:col-span-3">
+        {{#if this.isClosed}}Chiuso{{/if}}
+        {{#if this.is247}}Aperto 24/7{{/if}}
+        {{#each this.openIntervals}}
+        {{this.start}}-{{this.end}}
+        {{/each}}
+    </div>
+</div>
+{{/each}}
+{{/with}}
+{{!-- </summary> --}}
